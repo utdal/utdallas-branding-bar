@@ -132,7 +132,7 @@ class BrandingBarCustomizer
         $max_width_setting = get_theme_mod('utd_branding_bar_max_width', $this->default_max_width);
 
         if ($max_width_setting != $this->default_max_width) {
-            wp_add_inline_style($css_handle, ".topbar .wrapper { max-width: ${max_width_setting}px; }");
+            wp_add_inline_style($css_handle, ".topbar { --topbar-width: {$max_width_setting}px; }");
         }
     }
 

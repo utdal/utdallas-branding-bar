@@ -3,7 +3,7 @@
     "type" : "wordpress-plugin",
     "description": "UT Dallas Branding Bar WordPress plugin",
     "keywords": ["branding", "wordpress", "UT Dallas", "UTD"],
-    "homepage": "http://github.com/utdallasresearch/utdallas-branding-bar",
+    "homepage": "http://github.com/utdal/utdallas-branding-bar",
     "license": "MIT",
     "authors": [{
         "name": "Wun Chiou",
@@ -11,6 +11,6 @@
         "role": "Developer"
     }],
     "require": {
-        "php": ">=7.1"
+        "php": ">=7.4"
     }
 }
