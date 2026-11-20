@@ -12,12 +12,12 @@ Composer: Add the following to the relevant sections in your `composer.json` fil
 {
     "repositories": [
         {
-        "url": "git@github.com:utdallasresearch/utdallas-branding-bar.git",
+        "url": "git@github.com:utdal/utdallas-branding-bar.git",
         "type": "github"
         }
     ],
     "require": {
-        "utdallasresearch/updraftplus": "dev-master"
+        "utdallasresearch/utdallas-branding-bar": "dev-master"
     }
 }
 ```

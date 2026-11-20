@@ -9,23 +9,25 @@
  * Plugin Name:       UT Dallas Branding Bar
  * Plugin URI:        https://github.com/utdallasresearch/utdallas-branding-bar
  * Description:       Prepend the UT Dallas Branding Bar to a site.
- * Version:           1.1.1
+ * Version:           1.2.0
  * Author:            UT Dallas Research Information Systems
  * Author URI:        https://research.utdallas.edu
  * License:           MIT
  * License URI:       https://opensource.org/licenses/MIT
  * Text Domain:       utdallas-branding-bar
  * Domain Path:       /languages
+ * Requires at least: 6.0
+ * Requires PHP:      7.4
  */
 
-define('UTDallasBrandingBar\VERSION', '1.1.1');
-define('UTDallasBrandingBar\PLUGIN_PATH', plugin_dir_path(__FILE__));
-define('UTDallasBrandingBar\PLUGIN_URL', plugin_dir_url(__FILE__));
-
 // If this file is called directly, abort.
-if (!defined('WPINC')) {
+if (!defined('ABSPATH')) {
     die;
 }
+
+define('UTDallasBrandingBar\VERSION', '1.2.0');
+define('UTDallasBrandingBar\PLUGIN_PATH', plugin_dir_path(__FILE__));
+define('UTDallasBrandingBar\PLUGIN_URL', plugin_dir_url(__FILE__));
 
 //////////////////////////////
 // Autoload plugin classes  //

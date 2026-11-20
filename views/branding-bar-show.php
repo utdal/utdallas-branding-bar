@@ -2,7 +2,12 @@
     <div class="wrapper">
 
         <div class="utd-wordmark">
-            <a href="https://www.utdallas.edu/">
+            <a
+                href="https://www.utdallas.edu/"
+                <?php if (get_theme_mod('utd_branding_bar_monogram_wordmark', false)) : ?>
+                aria-label="The University of Texas at Dallas homepage"
+                <?php endif; ?>
+            >
                 <?php if (get_theme_mod('utd_branding_bar_monogram_wordmark', false)) : ?>
                     <svg class="utd-monogram-wordmark-svg" enable-background="new 0 0 424 33" viewBox="0 0 424 33" xmlns="http://www.w3.org/2000/svg">
                         <g fill="#fff">
@@ -43,7 +48,7 @@
             </a>
         </div>
 
-        <div class="branding-bar-right <?php echo get_theme_mod('utd_branding_bar_show_links', true) ? 'show' : 'hide'; ?>">
+        <div class="branding-bar-right <?php if (!get_theme_mod('utd_branding_bar_show_links', true)) { echo 'hide'; } ?>">
             <ul class="link-set">
                 <?php if (get_theme_mod('utd_branding_bar_apply_link', true)) : ?>
                     <li><a href="https://www.utdallas.edu/apply">Apply</a></li>
@@ -65,7 +70,7 @@
                 <?php endif; ?>
                 <?php if (has_nav_menu('utd_branding_bar_menu')) : ?>
                     <?php foreach(wp_get_nav_menu_items( get_nav_menu_locations()['utd_branding_bar_menu'] ?? 'utd_branding_bar_menu') as $branding_bar_menu_item) : ?>
-                        <li><a href="<?php echo $branding_bar_menu_item->url; ?>"><?php echo $branding_bar_menu_item->title; ?></a></li>
+                        <li><a href="<?php echo esc_url($branding_bar_menu_item->url); ?>"><?php echo esc_html($branding_bar_menu_item->title); ?></a></li>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
@@ -76,11 +81,9 @@
                         <input type="hidden" value="main" name="s">
                         <input type="text" id="branding_bar_utd_search" placeholder="Search UT Dallas" name="q">
                         <button type="submit" class="search-button has-background">
-                            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-                                <defs><style>.cls-1 {fill: #fff;}</style></defs>
-                                <title>magnifying-glass-icon</title>
-                                <path class="cls-1" d="M9.68,10.56a24.25,24.25,0,1,0,34.3,0A24.2,24.2,0,0,0,9.68,10.56Zm29.7,29.7a17.68,17.68,0,1,1,0-25A17.68,17.68,0,0,1,39.38,40.26Z" />
-                                <rect class="cls-1" x="46.8" y="38.46" width="6.6" height="25" transform="translate(-21.36 50.35) rotate(-45)" />
+                            <svg id="utd-brandingbar-search-utd-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                                <path fill="#fff" class="utd-brandingbar-search-utd-icon" d="M9.68,10.56a24.25,24.25,0,1,0,34.3,0A24.2,24.2,0,0,0,9.68,10.56Zm29.7,29.7a17.68,17.68,0,1,1,0-25A17.68,17.68,0,0,1,39.38,40.26Z" />
+                                <rect fill="#fff" class="utd-brandingbar-search-utd-icon" x="46.8" y="38.46" width="6.6" height="25" transform="translate(-21.36 50.35) rotate(-45)" />
                             </svg>
                             <span class="sr-only">Search</span>
                         </button>
@@ -89,15 +92,13 @@
             <?php endif; ?>
             <?php if (get_theme_mod('utd_branding_bar_site_search_box', false)) : ?>
                 <div class="searchbox">
-                    <form role='search' action="<?php echo home_url(); ?>">
+                    <form role='search' action="<?php echo esc_url(home_url('/')); ?>">
                         <label class="sr-only" for="branding_bar_site_search">Search</label>
                         <input type="text" id="branding_bar_site_search" placeholder="Search" name="s">
                         <button type="submit" class="search-button has-background">
-                            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-                                <defs><style>.cls-1 {fill: #fff;}</style></defs>
-                                <title>magnifying-glass-icon</title>
-                                <path class="cls-1" d="M9.68,10.56a24.25,24.25,0,1,0,34.3,0A24.2,24.2,0,0,0,9.68,10.56Zm29.7,29.7a17.68,17.68,0,1,1,0-25A17.68,17.68,0,0,1,39.38,40.26Z" />
-                                <rect class="cls-1" x="46.8" y="38.46" width="6.6" height="25" transform="translate(-21.36 50.35) rotate(-45)" />
+                            <svg id="utd-brandingbar-search-site-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                                <path fill="#fff" class="utd-brandingbar-search-site-icon" d="M9.68,10.56a24.25,24.25,0,1,0,34.3,0A24.2,24.2,0,0,0,9.68,10.56Zm29.7,29.7a17.68,17.68,0,1,1,0-25A17.68,17.68,0,0,1,39.38,40.26Z" />
+                                <rect fill="#fff" class="utd-brandingbar-search-site-icon" x="46.8" y="38.46" width="6.6" height="25" transform="translate(-21.36 50.35) rotate(-45)" />
                             </svg>
                             <span class="sr-only">Search</span>
                         </button>
